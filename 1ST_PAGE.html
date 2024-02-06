@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>-DUMMY_R0UND-</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        font-family: "Courier New", Courier, monospace;
+        color: #00ff00;
+        text-align: center;
+        line-height: 1;
+      }
+
+      #loginForm {
+        width: 300px;
+        margin: 100px auto;
+        background-color: #000000;
+        padding: 20px;
+        border: 2px solid #00ff00;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: 1px solid #00ff00;
+        background-color: #000000;
+        color: #00ff00;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      input[type="submit"] {
+        background-color: #00ff00;
+        color: #000000;
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      input {
+        font-size: 14px;
+      }
+
+
+      #hiddenContent {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+        color: #009100;
+      }
+    </style>
+  </head>
+  <body bgcolor="#000000">
+    <div id="loginForm">
+      <form onsubmit="login(event)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required /><br /><br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" required /><br /><br />
+        <input
+          type="submit"
+          value="Login"
+          style="margin-left: auto; margin-right: auto; display: block"
+        />
+      </form>
+    </div>
+
+    <div id="hiddenContent">
+      <h2>Welcome, People !</h2>
+
+      <p>YAY, you did it "Bounty Hunter". Now have fun looking for this guy!</p>
+
+      <img src="IMGS/Cowboy.jpg" width="512px" class="center" />
+
+      <p align="center" style="color: #009100">
+       ! WANTED COWBOY ! HUNT HIM DOWN ! WANTED ONLY ALIVE !<br />
+      </p>
+
+      <a href="https://www.youtube.com/watch?v=97xfV6yXcrk" target=”_blank”>
+        <img src="IMGS/Ed.png" width="30px" height="30px" alt="me" />
+      </a>
+    </div>
+
+    <script>
+      function login(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (
+          username.toUpperCase() === "USERNAME" &&
+          password.toUpperCase() === "PASSWORD"
+        ) {
+          document.getElementById("loginForm").style.display = "none";
+          document.getElementById("hiddenContent").style.display = "block";
+          document.getElementById("loggedInUser").textContent = username;
+        } else {
+          alert("NUH-UH! Invalid username or password. Please try again.");
+        }
+      }
+    </script>
+  </body>
+</html>
